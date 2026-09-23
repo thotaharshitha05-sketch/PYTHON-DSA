@@ -1,0 +1,16 @@
+def max_water_container(heights):
+  left = 0
+  right = len(heights) - 1
+  max_water = 0
+  while left < right:
+      width = right - left
+      height = min(heights[left], heights[right])
+      water = width * height
+      max_water = max(max_water, water)
+      if heights[left] < heights[right]:
+          left += 1
+      else:
+          right -= 1
+  return max_water
+heights = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+print(max_water_container(heights))
