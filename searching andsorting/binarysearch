@@ -4,7 +4,10 @@ def binarysearch(a,el):
   while (l < r):
     m=(l+r)//2
     if a[m] == el:
-      return m 
+      return m
+    elif l ==m :
+      return -1
+  
     elif a[m] <el:
       l=m 
     else :
